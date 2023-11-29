@@ -36,7 +36,7 @@ const ProductList = ({ productList, onUpdateQuantity, onApplyDiscount, onRemoveP
           {productList.map((product) => (
             <tr key={product.id}>
               <td>{product.name}</td>
-              <td>{`$ ${product.price.toFixed(2)}`}</td>
+              <td>{`INR ${product.price.toFixed(2)}`}</td>
               <td>
                 <input
                    className='quantity-input'
@@ -46,7 +46,7 @@ const ProductList = ({ productList, onUpdateQuantity, onApplyDiscount, onRemoveP
                   onChange={(e) => onUpdateQuantity(product.id, parseInt(e.target.value, 10))}
                 />
               </td>
-              <td>{`$ ${(product.price * product.quantity).toFixed(2)}`}</td>
+              <td>{`INR ${(product.price * product.quantity).toFixed(2)}`}</td>
               <td>
                 <button onClick={() => onRemoveProduct(product.id)}><MdDeleteForever className='icons' fontSize={20} /></button>
               </td>
@@ -58,7 +58,7 @@ const ProductList = ({ productList, onUpdateQuantity, onApplyDiscount, onRemoveP
       
 
       <div className='price-discount'>
-        <h4>Total: {`$ ${productList.reduce((acc, product) => acc + product.price * product.quantity, 0).toFixed(2)}`}</h4>
+        <h4>Total: {`INR ${productList.reduce((acc, product) => acc + product.price * product.quantity, 0).toFixed(2)}`}</h4>
 
         
         <div>
@@ -74,7 +74,7 @@ const ProductList = ({ productList, onUpdateQuantity, onApplyDiscount, onRemoveP
       </div>
         
 
-        <h4>Discounted Total: {`$ ${onApplyDiscount(discount).toFixed(2)}`}</h4>
+        <h4>Discounted Total: {`INR ${onApplyDiscount(discount).toFixed(2)}`}</h4>
       </div>
     </div>
   );
