@@ -61,6 +61,13 @@ tbody, tr, td{
     h1{
         font: 15px;
     }
+
+    .cart-list>table{
+        width: 100%;
+        margin: auto;
+        border: 1px solid rgb(206, 206, 206);
+    }
+
     .product-list{
         width: 90%;
         margin: auto;
